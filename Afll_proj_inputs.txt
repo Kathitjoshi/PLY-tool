@@ -1,0 +1,6 @@
+parse_and_print("3 + 5 * (2 - 4)")
+parse_and_print("myList = [1, 2, 3, 4]")
+parse_and_print("for i in range(1, 5): x = 10")
+parse_and_print("while x < 5: y = 20")
+parse_and_print("if x == 5: y = 10 else: y = 20")
+parse_and_print("x = 42")
