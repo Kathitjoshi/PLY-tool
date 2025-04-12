@@ -1,4 +1,4 @@
-* PLY-tool
+# PLY-tool
 * PLY is a pure-Python implementation of the popular compiler construction tools LEX and YACC. PLY is an implementation of LEX and YACC parsing tools for Python. Main Features:
 * It's implemented entirely in Python.
 * It uses LR-parsing which is reasonably efficient and well suited for larger grammars.
