@@ -1,3 +1,4 @@
+First 6 options input (Make sure 7 is a combo of these and nothing else!)
 parse_and_print("3 + 5 * (2 - 4)")
 parse_and_print("myList = [1, 2, 3, 4]")
 parse_and_print("for i in range(1, 5): x = 10")
