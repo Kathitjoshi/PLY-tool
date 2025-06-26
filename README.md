@@ -49,7 +49,7 @@ A sophisticated Python parser built using **PLY (Python Lex-Yacc)** that can ana
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/enhanced-python-parser.git
+   git clone https://github.com/Kathitjoshi/PLY-tool.git
    cd enhanced-python-parser
    ```
 
@@ -417,8 +417,8 @@ Contributions are welcome! Here's how to get started:
 ### Development Setup
 
 ```bash
-git clone https://github.com/yourusername/enhanced-python-parser.git
-cd enhanced-python-parser
+git clone https://github.com/Kathitjoshi/PLY-tool.git
+cd PLY-tool
 pip install -r requirements.txt
 python -m pytest tests/  # Run tests
 ```
