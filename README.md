@@ -2,6 +2,11 @@
 
 A sophisticated Python parser built using **PLY (Python Lex-Yacc)** that can analyze, parse, and evaluate various Python language constructs. This project demonstrates compiler construction concepts with an interactive interface and comprehensive AST (Abstract Syntax Tree) visualization.
 
+![Language](https://img.shields.io/badge/Language-Python-blue?style=for-the-badge&logo=python)
+![Output](https://img.shields.io/badge/Output-AST-orange?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+
+
 ## 📋 Table of Contents
 
 - [Features](#-features)
