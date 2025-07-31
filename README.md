@@ -226,6 +226,5 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information
 
 ⭐ **Star this repo if you found it helpful!** ⭐
 
-![Visitors](https://visitor-badge.glitch.me/badge?page_id=Kathitjoshi/PLY-tool)
 
 </div>
