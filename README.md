@@ -1,451 +1,231 @@
-# 🐍 Enhanced Python Parser
+# 🚀 Enhanced PLY Parser & Interpreter
 
-A sophisticated Python parser built using **PLY (Python Lex-Yacc)** that can analyze, parse, and evaluate various Python language constructs. This project demonstrates compiler construction concepts with an interactive interface and comprehensive AST (Abstract Syntax Tree) visualization.
+**A comprehensive lexer, parser, and interpreter built with Python using PLY (Python Lex-Yacc) and Tkinter GUI.**
 
 ![Language](https://img.shields.io/badge/Language-Python-blue?style=for-the-badge&logo=python)
-![Output](https://img.shields.io/badge/Output-AST-orange?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-
-
-## 📋 Table of Contents
-
-- [Features](#-features)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [Supported Language Constructs](#-supported-language-constructs)
-- [Architecture](#-architecture)
-- [Examples](#-examples)
-- [API Reference](#-api-reference)
-- [Contributing](#-contributing)
-- [License](#-license)
+![GUI](https://img.shields.io/badge/GUI-Tkinter-orange?style=for-the-badge)
+![Parser](https://img.shields.io/badge/Parser-PLY-green?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-red?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
 
 ## ✨ Features
 
-### Core Functionality
-- **🔍 Lexical Analysis**: Tokenizes Python-like code using PLY's lexer
-- **🌳 Syntax Parsing**: Builds Abstract Syntax Trees (AST) for parsed code
-- **📊 Expression Evaluation**: Evaluates mathematical expressions and variable assignments
-- **🎯 Error Handling**: Comprehensive syntax error detection and reporting
-- **📈 AST Visualization**: Pretty-printed tree structures for parsed code
+### 🔤 **Complete Lexical Analysis**
+- **Token Recognition**: Numbers, strings, identifiers, operators, keywords
+- **Keyword Support**: `for`, `while`, `if`, `else`, `print`, `True`, `False`, `range`
+- **Operator Support**: Arithmetic (`+`, `-`, `*`, `/`) and comparison (`==`, `!=`, `<`, `>`, `<=`, `>=`)
+- **Error Handling**: Comprehensive lexical error detection and reporting
 
-### Language Support
-- ✅ Arithmetic expressions (`+`, `-`, `*`, `/`)
-- ✅ Variable assignments (`x = 42`)
-- ✅ List/Array declarations (`myList = [1, 2, 3]`)
-- ✅ Control flow statements (`if/else`, `for`, `while`)
-- ✅ Comparison operators (`==`, `!=`, `<`, `>`, `<=`, `>=`)
-- ✅ Nested expressions and parentheses
-- ✅ Range-based for loops (`for i in range(1, 5)`)
+### 🌳 **Abstract Syntax Tree (AST) Generation**
+- **Node Types**: Variables, literals, binary operations, assignments, control structures
+- **Visual AST Display**: Hierarchical tree representation with proper indentation
+- **Complete Coverage**: Support for all language constructs
 
-### Interactive Features
-- 🎮 Interactive menu system
-- 🔧 Syntax validation
-- 📝 Step-by-step parsing feedback
-- 🎨 Colored terminal output
-- 💾 Variable context preservation
+### 🔄 **Full Interpreter Implementation**
+- **Variable Management**: Global symbol table with dynamic typing
+- **Control Flow**: If/else statements, for loops, while loops
+- **Built-in Functions**: `str()` function with extensible architecture
+- **Data Types**: Numbers, booleans, strings, lists
+- **Runtime Error Handling**: Division by zero, undefined variables, type errors
 
-## 🚀 Installation
+### 🎨 **Modern GUI Interface**
+- **Code Editor**: Syntax-highlighted input with scroll support
+- **Live Output**: Real-time AST visualization and program execution
+- **Error Display**: Detailed error messages with line numbers
+- **Clean Layout**: Professional themed interface using TTK widgets
+
+## 🚀 Getting Started
 
 ### Prerequisites
 - Python 3.7 or higher
 - PLY (Python Lex-Yacc) library
 
-### Setup
+### Installation
 
-1. **Clone the repository**:
+1. **Clone the Repository**
    ```bash
    git clone https://github.com/Kathitjoshi/PLY-tool.git
-   cd enhanced-python-parser
+   cd PLY-tool
    ```
 
-2. **Install dependencies**:
+2. **Install Dependencies**
    ```bash
    pip install ply
    ```
+   > **Note:** Tkinter comes pre-installed with most Python distributions.
 
-3. **Run the parser**:
+3. **Run the Application**
    ```bash
    python combined.py
    ```
 
-### Alternative Installation
-If you don't have PLY installed:
-```bash
-pip install ply colorama  # colorama for colored output (optional)
-```
+## 💻 Language Support
 
-## 🎯 Usage
+### Supported Syntax
 
-### Interactive Mode
-Run the script and select from the interactive menu:
-
-```bash
-$ python combined.py
-
-Enhanced PLY Parser - Select an option:
-1. Arithmetic Expression (e.g., 3 + 5 * 2)
-2. List Declaration (e.g., myList = [1, 2, 3])
-3. For Loop (e.g., for i in range(1, 5): x = 10)
-4. While Loop (e.g., while x < 5: y = 20)
-5. If Statement (e.g., if x == 5: y = 10 else: y = 20)
-6. Simple Assignment (e.g., x = 42)
-7. General Statement (Try anything!)
-8. Exit
-
-Enter choice: 
-```
-
-### Programmatic Usage
+#### **Variables & Data Types**
 ```python
-from combined import parse_and_print_ast
-
-# Parse and analyze expressions
-parse_and_print_ast("3 + 5 * 2")
-parse_and_print_ast("myList = [1, 2, 3, 4]")
-parse_and_print_ast("for i in range(1, 5): x = 10")
+x = 10                    # Integer
+name = "Hello World"      # String  
+flag = True               # Boolean
+my_list = [1, 2, "text"]  # List
 ```
 
-## 📚 Supported Language Constructs
-
-### 1. Arithmetic Expressions
+#### **Control Structures**
 ```python
-# Basic operations
-3 + 5 * 2
-(10 - 3) / 2
-x + y * z
+# If/Else Statements
+if x > 5: 
+    print("Greater than 5") 
+else: 
+    print("Less than or equal to 5")
 
-# With variables
-result = 10 + 20 * 3
+# For Loops
+for i in range(0, 10): 
+    print(i)
+
+# While Loops  
+while x > 0: 
+    print(x)
+    x = x - 1
 ```
 
-### 2. Variable Assignments
+#### **Built-in Functions**
 ```python
-x = 42
-name = "John"
-result = x + 10
+print("Hello World")      # Output function
+str(42)                   # Type conversion
 ```
 
-### 3. List Declarations
+### Example Program
 ```python
-numbers = [1, 2, 3, 4, 5]
-mixed = [1, x, 3]
-empty = []
-```
-
-### 4. Control Flow
-
-#### If Statements
-```python
-if x == 5: y = 10
-if x == 5: y = 10 else: y = 20
-```
-
-#### For Loops
-```python
-for i in range(1, 5): x = 10
-for item in myList: process = item
-```
-
-#### While Loops
-```python
-while x < 5: y = 20
-while condition: x = x + 1
-```
-
-### 5. Comparison Operations
-```python
-x == 5
-y != 10
-a < b
-c >= d
+x = 10
+if x > 5: print("x is greater than 5") else: print("x is not greater than 5")
+for i in range(0, 3): print(i)
+while x > 8: print("x is " + str(x)); x = x - 1
+my_list = [1, "hello", True]
+print(my_list)
 ```
 
 ## 🏗️ Architecture
 
-### Components
 
-#### 1. **Lexer (Tokenizer)**
-- Converts input text into tokens
-- Handles keywords, operators, literals, and identifiers
-- Supports error recovery
+### Core Components
 
-```python
-tokens = (
-    'NUMBER', 'IDENTIFIER', 'PLUS', 'MINUS', 'TIMES', 'DIVIDE',
-    'ASSIGN', 'LPAREN', 'RPAREN', 'LBRACKET', 'RBRACKET',
-    'FOR', 'WHILE', 'IF', 'ELSE', 'IN', 'RANGE', 'COLON',
-    'EQUALS', 'NE', 'LT', 'GT', 'LE', 'GE', 'COMMA'
-)
-```
+#### **AST Node Classes**
+- `Node`: Base class for all AST nodes
+- `BlockNode`: Sequence of statements
+- `BinOpNode`: Binary operations (`+`, `-`, `==`, etc.)
+- `NumberNode`, `StringNode`, `BooleanNode`: Literal values
+- `VariableNode`: Identifier references
+- `AssignmentNode`: Variable assignments
+- `IfNode`, `ForNode`, `WhileNode`: Control flow
+- `PrintNode`: Output statements
+- `FunctionCallNode`: Function invocations
 
-#### 2. **Parser (Syntax Analyzer)**
-- Builds Abstract Syntax Trees using grammar rules
-- Implements operator precedence
-- Provides detailed error messages
+#### **Lexer (Tokenizer)**
+- Regular expression-based token recognition
+- Keyword vs identifier disambiguation
+- Line number tracking for error reporting
 
-#### 3. **AST Node Classes**
-```python
-class Node: pass                    # Base class
-class BinOpNode(Node): pass         # Binary operations
-class NumberNode(Node): pass        # Numeric literals
-class VariableNode(Node): pass      # Variables/identifiers
-class AssignmentNode(Node): pass    # Assignments
-class ListNode(Node): pass          # List literals
-class IfNode(Node): pass            # If statements
-class ForNode(Node): pass           # For loops
-class WhileNode(Node): pass         # While loops
-```
+#### **Parser (Syntax Analyzer)**
+- Context-free grammar implementation
+- Operator precedence handling
+- Error recovery and reporting
 
-#### 4. **Evaluator**
-- Traverses AST and computes values
-- Maintains variable context
-- Handles type checking
+#### **Interpreter (Evaluator)**
+- Tree-walking interpreter
+- Dynamic variable binding
+- Built-in function registry
 
-### Grammar Rules
+## 🎯 Use Cases
 
-The parser implements a context-free grammar:
+### 🎓 **Educational Applications**
+- **Compiler Theory**: Learn lexing, parsing, and interpretation
+- **Language Design**: Experiment with syntax and semantics
+- **Algorithm Visualization**: See how parsers build ASTs
 
-```
-statement -> assignment | expression | if_statement | for_loop | while_loop
-assignment -> IDENTIFIER ASSIGN expression
-expression -> expression PLUS expression | expression MINUS expression | ...
-factor -> NUMBER | IDENTIFIER | LPAREN expression RPAREN
-```
+### 🛠️ **Development Tools**
+- **DSL Prototyping**: Quick domain-specific language testing
+- **Code Analysis**: Understanding parser implementation
+- **Academic Projects**: Comprehensive compiler construction example
 
-## 💡 Examples
+## 🔧 Technical Details
 
-### Example 1: Arithmetic Expression
-**Input**: `3 + 5 * 2`
+- **Language**: Python 3.7+
+- **Parser Generator**: PLY (Python Lex-Yacc)
+- **GUI Framework**: Tkinter with TTK themes
+- **Architecture Pattern**: Visitor pattern for AST traversal
+- **Error Handling**: Multi-stage error reporting (lexical, syntactic, semantic)
 
-**Output**:
-```
-==================== RESULT ====================
-Input: 3 + 5 * 2
+## 🗺️ Roadmap
 
---- Abstract Syntax Tree (AST) ---
-BinOp(op='+')
-  NumberNode(3)
-  BinOp(op='*')
-    NumberNode(5)
-    NumberNode(2)
+Future enhancements planned:
 
---- Evaluation Result ---
-Output: 13
-Type: int
-================================================
-```
+- [ ] **Extended Language Features**
+  - [ ] Function definitions and calls
+  - [ ] Dictionary data type
+  - [ ] List comprehensions
+  - [ ] Exception handling
 
-### Example 2: List Declaration
-**Input**: `myList = [1, 2, 3]`
+- [ ] **IDE Features**
+  - [ ] Syntax highlighting in editor
+  - [ ] Line numbers and debugging
+  - [ ] File import/export
+  - [ ] Code completion
 
-**Output**:
-```
-==================== RESULT ====================
-Input: myList = [1, 2, 3]
-
---- Abstract Syntax Tree (AST) ---
-Assignment:
-  VariableNode(myList)
-  List:
-    NumberNode(1)
-    NumberNode(2)
-    NumberNode(3)
-
---- Evaluation Result ---
-Output: [1, 2, 3]
-Type: list
-================================================
-```
-
-### Example 3: Control Flow
-**Input**: `if x == 5: y = 10 else: y = 20`
-
-**Output**:
-```
-==================== RESULT ====================
-Input: if x == 5: y = 10 else: y = 20
-
---- Abstract Syntax Tree (AST) ---
-If:
-  Condition:
-    BinOp(op='==')
-      VariableNode(x)
-      NumberNode(5)
-  Body:
-    Assignment:
-      VariableNode(y)
-      NumberNode(10)
-  Else:
-    Assignment:
-      VariableNode(y)
-      NumberNode(20)
-================================================
-```
-
-## 🔧 API Reference
-
-### Core Functions
-
-#### `parse_and_print_ast(input_string, choice='7')`
-Parses input and displays AST with evaluation results.
-
-**Parameters**:
-- `input_string` (str): Code to parse
-- `choice` (str): Parser mode selection
-
-**Returns**: None (prints output)
-
-#### `evaluate_expression(node, variables=None)`
-Evaluates AST nodes to produce actual values.
-
-**Parameters**:
-- `node` (Node): AST node to evaluate
-- `variables` (dict): Variable context
-
-**Returns**: Evaluated result
-
-#### `validate_syntax(input_string, choice)`
-Validates syntax based on selected parsing mode.
-
-**Parameters**:
-- `input_string` (str): Code to validate
-- `choice` (str): Parser mode
-
-**Returns**: `(bool, str)` - Success status and message
-
-### AST Node Classes
-
-All AST nodes inherit from the base `Node` class:
-
-```python
-class Node:
-    def __repr__(self):
-        return f"{self.__class__.__name__}"
-```
-
-Specific node types:
-- `BinOpNode(left, op, right)`: Binary operations
-- `NumberNode(value)`: Numeric literals
-- `VariableNode(name)`: Variable references
-- `AssignmentNode(left, right)`: Variable assignments
-- `ListNode(items)`: List literals
-- `IfNode(condition, if_body, else_body)`: Conditional statements
-- `ForNode(iterator, start, end, body)`: For loops
-- `WhileNode(condition, body)`: While loops
-
-## 🛠️ Development
-
-### Adding New Language Features
-
-1. **Add tokens** to the `tokens` tuple
-2. **Define token patterns** using regex
-3. **Add grammar rules** with `p_` functions
-4. **Create AST node classes** if needed
-5. **Update the evaluator** for new node types
-
-### Example: Adding Boolean Literals
-
-```python
-# 1. Add token
-tokens = (..., 'TRUE', 'FALSE')
-
-# 2. Define patterns
-def t_TRUE(t):
-    r'True'
-    t.value = True
-    return t
-
-# 3. Add grammar rule
-def p_boolean(p):
-    '''boolean : TRUE | FALSE'''
-    p[0] = BooleanNode(p[1])
-
-# 4. Create AST node
-class BooleanNode(Node):
-    def __init__(self, value):
-        self.value = value
-```
-
-### Testing
-
-Test your parser with various inputs:
-
-```python
-test_cases = [
-    "3 + 5 * 2",
-    "x = 42",
-    "myList = [1, 2, 3]",
-    "for i in range(1, 5): x = 10",
-    "if x == 5: y = 10 else: y = 20"
-]
-
-for test in test_cases:
-    parse_and_print_ast(test)
-```
-
-## 🐛 Error Handling
-
-The parser provides comprehensive error handling:
-
-### Lexical Errors
-```
-Illegal character '&' at line 1
-```
-
-### Syntax Errors
-```
-Syntax error at line 1, token='5' (type='NUMBER')
-```
-
-### Semantic Errors
-```
-Syntax Error: Invalid arithmetic expression. Must contain operators (+,-,*,/)
-```
-
-## 📊 Performance
-
-- **Parsing Speed**: ~1000 expressions/second
-- **Memory Usage**: Minimal AST overhead
-- **Error Recovery**: Graceful handling of malformed input
+- [ ] **Advanced Parsing**
+  - [ ] Better error recovery
+  - [ ] Symbol table management
+  - [ ] Type checking system
 
 ## 🤝 Contributing
 
-Contributions are welcome! Here's how to get started:
+Contributions are welcome! Here's how you can help:
 
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
-3. **Make your changes** and add tests
-4. **Commit your changes**: `git commit -m 'Add amazing feature'`
-5. **Push to the branch**: `git push origin feature/amazing-feature`
-6. **Open a Pull Request**
+1. **Fork** the repository
+2. **Create** a feature branch
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+3. **Commit** your changes
+   ```bash
+   git commit -m 'Add amazing feature'
+   ```
+4. **Push** to the branch
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+5. **Open** a Pull Request
 
-### Development Setup
-
-```bash
-git clone https://github.com/Kathitjoshi/PLY-tool.git
-cd PLY-tool
-pip install -r requirements.txt
-python -m pytest tests/  # Run tests
-```
+### Development Guidelines
+- Follow PEP 8 style guidelines
+- Add docstrings for new classes and methods
+- Include test cases for new features
+- Update documentation as needed
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information.
+
+## 👨‍💻 Author
+
+**[Your Name]**
+- GitHub: [@yourusername](https://github.com/Kathitjoshi)
+- Project Link: [PLY Parser & Interpreter](https://github.com/Kathitjoshi/PLY-tool)
 
 ## 🙏 Acknowledgments
 
-- **PLY (Python Lex-Yacc)** - The foundation of this parser
-- **Python Software Foundation** - For the amazing Python language
-- **Compiler Construction Community** - For inspiration and best practices
-
-## 📞 Support
-
-- 📧 Email: your.email@example.com
-- 🐛 Issues: [GitHub Issues](https://github.com/Kathitjoshi/PLY-tool/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/Kathitjoshi/PLY-tool/pulls)
+- **PLY (Python Lex-Yacc)** - Powerful parsing tools for Python
+- **Python Community** - For excellent documentation and resources
+- **Compiler Design Principles** - Inspiration from classic textbooks
 
 ---
 
-**Made with ❤️ by Kathit Joshi using PLY and Python**
+<div align="center">
 
-*Happy Parsing! 🚀*
+**Built with ❤️ using Python, PLY, and Tkinter**
+
+⭐ **Star this repo if you found it helpful!** ⭐
+
+![Visitors](https://visitor-badge.glitch.me/badge?page_id=Kathitjoshi/PLY-tool)
+
+</div>
